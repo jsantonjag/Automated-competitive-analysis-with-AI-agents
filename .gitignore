@@ -176,6 +176,7 @@ celerybeat.pid
 env/
 venv/
 ENV/
+features_index/
 env.bak/
 venv.bak/
 
