@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: market-intelligence
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python -m spacy download es_core_news_md
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: SERPER_API_KEY
+        sync: false
+    disk:
+      name: data
+      mountPath: /opt/render/project/src/features_index
+      sizeGB: 1
