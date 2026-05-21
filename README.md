@@ -18,63 +18,42 @@ The entire process is accessible through a real-time web interface built with Fa
 
 ## Architecture
 
+```
 Input (category)
         │
         ▼
-        
 ┌─────────────────┐
-
 │  company_node   │  → Discovers the top 5 companies
-
 └────────┬────────┘
          │
          ▼
-         
 ┌─────────────────────────────────────────────┐
-
 │              parallel_node                  │
-
 │  ┌─────────────────┐  ┌──────────────────┐  │
-
 │  │   Branch A      │  │    Branch B      │  │
-
 │  │   (News)        │  │  (Web Scraping)  │  │
-
 │  │ scraping_agent  │  │ website_finder   │  │
-
 │  │ → DuckDB        │  │ website_sitemap  │  │
-
 │  └─────────────────┘  │ features_agent   │  │
-
 │                       │ → DuckDB         │  │
-
 │                       └──────────────────┘  │
-
 └───────────────┬─────────────────────────────┘
                 │                
-                ▼
-                
+                ▼           
 ┌───────────────────────┐
-
 │    embedding_node     │  → Indexes data into ChromaDB (RAG)
-
 └──────────┬────────────┘
            │           
-           ▼
-           
+           ▼          
 ┌─────────────────────────────┐
-
 │    structuring_swot_node    │  → Feature matrix + SWOT (parallel)
-
 └──────────┬──────────────────┘
            │           
-           ▼
-           
+           ▼           
 ┌─────────────────────┐
-
 │     report_node     │  → Generates .md and .pdf report (RAG-enriched)
-
 └─────────────────────┘
+```
 
 ### Key modules
 
