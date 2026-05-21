@@ -21,11 +21,13 @@ The entire process is accessible through a real-time web interface built with Fa
 Input (category)
         │
         ▼
+        
 ┌─────────────────┐
 │  company_node   │  → Discovers the top 5 companies
 └────────┬────────┘
          │
          ▼
+         
 ┌─────────────────────────────────────────────┐
 │              parallel_node                  │
 │  ┌─────────────────┐  ┌──────────────────┐  │
@@ -39,16 +41,19 @@ Input (category)
 └───────────────┬─────────────────────────────┘
                 │
                 ▼
+                
 ┌───────────────────────┐
 │    embedding_node     │  → Indexes data into ChromaDB (RAG)
 └──────────┬────────────┘
            │
            ▼
+           
 ┌─────────────────────────────┐
 │    structuring_swot_node    │  → Feature matrix + SWOT (parallel)
 └──────────┬──────────────────┘
            │
            ▼
+           
 ┌─────────────────────┐
 │     report_node     │  → Generates .md and .pdf report (RAG-enriched)
 └─────────────────────┘
