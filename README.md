@@ -193,6 +193,7 @@ A summary is printed to the console at the end of each run. When two or more run
 ├── graph.py                      # LangGraph orchestrator
 ├── pipeline_state.py             # Shared pipeline state
 ├── eval_report.py                # Evaluation report
+├── render.yaml                   # Interface file with Render
 ├── requirements.txt
 ├── .gitignore
 │
