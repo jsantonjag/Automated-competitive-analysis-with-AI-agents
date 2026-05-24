@@ -188,7 +188,7 @@ A summary is printed to the console at the end of each run. When two or more run
 ---
 
 ## 📁 Project structure
-
+```
 ├── app.py                        # FastAPI server
 ├── graph.py                      # LangGraph orchestrator
 ├── pipeline_state.py             # Shared pipeline state
@@ -235,6 +235,7 @@ A summary is printed to the console at the end of each run. When two or more run
 │
 └── frontend/
     └── index.html
+```
 
 ---
 
